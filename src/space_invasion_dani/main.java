@@ -8,13 +8,16 @@ package space_invasion_dani;
  *
  * @author dam2
  */
-public class Space_Invasion_Dani {
+public class main {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    }
-    
+        System.out.println("Inicio.....");
+        Vista miVentana = new Vista();
+        
+        miVentana.setVisible(true);
+    }  
 }
