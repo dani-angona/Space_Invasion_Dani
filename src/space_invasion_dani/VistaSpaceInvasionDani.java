@@ -26,19 +26,19 @@ public class VistaSpaceInvasionDani extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        labelSpaceInvasionDani = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 5)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space_Invasion_Dani.png"))); // NOI18N
-        getContentPane().add(jLabel1, java.awt.BorderLayout.CENTER);
+        labelSpaceInvasionDani.setFont(new java.awt.Font("Dialog", 0, 5)); // NOI18N
+        labelSpaceInvasionDani.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelSpaceInvasionDani.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space_Invasion_Dani.png"))); // NOI18N
+        getContentPane().add(labelSpaceInvasionDani, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel labelSpaceInvasionDani;
     // End of variables declaration//GEN-END:variables
 }
