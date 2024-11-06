@@ -6,9 +6,9 @@ package space_invasion_dani;
 
 /**
  *
- * @author dam2
+ * @author Dani Angona
  */
-public class main {
+public class mainSpaceInvasionDani {
 
     /**
      * @param args the command line arguments
@@ -16,8 +16,11 @@ public class main {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Inicio.....");
-        Vista miVentana = new Vista();
+        VistaSpaceInvasionDani VentanaSID = new VistaSpaceInvasionDani();      
+        VentanaSID.setVisible(true);
         
-        miVentana.setVisible(true);
+        ModeloSpaceInvasionDani modeloSID = new ModeloSpaceInvasionDani();
+        VistaSpaceInvasionDani vistaSID = new VistaSpaceInvasionDani();
+        ControladorSpaceInvasionDani controladorSID = new ControladorSpaceInvasionDani(modeloSID, vistaSID);
     }  
 }
