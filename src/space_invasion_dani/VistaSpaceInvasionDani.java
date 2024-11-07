@@ -32,7 +32,7 @@ public class VistaSpaceInvasionDani extends javax.swing.JFrame {
 
         labelSpaceInvasionDani.setFont(new java.awt.Font("Dialog", 0, 5)); // NOI18N
         labelSpaceInvasionDani.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelSpaceInvasionDani.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Space_Invasion_Dani.png"))); // NOI18N
+        labelSpaceInvasionDani.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_inicio/Space_Invasion_Dani.png"))); // NOI18N
         getContentPane().add(labelSpaceInvasionDani, java.awt.BorderLayout.CENTER);
 
         pack();
