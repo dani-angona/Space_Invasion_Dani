@@ -5,7 +5,7 @@
 package space_invasion_dani;
 
 /**
- *
+ * Clase modelo de mi programa Space Invasion Dani
  * @author Dani Angona
  */
 public class ModeloSpaceInvasionDani {

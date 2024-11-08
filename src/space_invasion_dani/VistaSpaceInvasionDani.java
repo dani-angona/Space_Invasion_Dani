@@ -5,7 +5,7 @@
 package space_invasion_dani;
 
 /**
- *
+ * Clase vista de mi programa Space Invasion Dani
  * @author Dani Angona
  */
 public class VistaSpaceInvasionDani extends javax.swing.JFrame {

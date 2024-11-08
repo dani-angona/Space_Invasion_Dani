@@ -5,7 +5,7 @@
 package space_invasion_dani;
 
 /**
- *
+ * Clase main de mi programa Space Invasion Dani
  * @author Dani Angona
  */
 public class mainSpaceInvasionDani {
@@ -16,8 +16,8 @@ public class mainSpaceInvasionDani {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Inicio.....");
-        VistaSpaceInvasionDani VentanaSID = new VistaSpaceInvasionDani();      
-        VentanaSID.setVisible(true);
+        VistaSpaceInvasionDani ventanaSID = new VistaSpaceInvasionDani();      
+        ventanaSID.setVisible(true);
         
         ModeloSpaceInvasionDani modeloSID = new ModeloSpaceInvasionDani();
         VistaSpaceInvasionDani vistaSID = new VistaSpaceInvasionDani();

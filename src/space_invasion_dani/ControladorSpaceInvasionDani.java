@@ -5,7 +5,7 @@
 package space_invasion_dani;
 
 /**
- *
+ * Clase controlador de mi programa Space Invasion Dani
  * @author Dani Angona
  */
 public class ControladorSpaceInvasionDani {
