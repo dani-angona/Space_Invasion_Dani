@@ -2,19 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package space_invasion_dani;
+package vistaSpaceInvasionDani;
 
 /**
- * Clase vista de mi programa Space Invasion Dani
+ * Clase vista presentacion de mi programa Space Invasion Dani
  * @author Dani Angona
  */
-public class VistaSpaceInvasionDani extends javax.swing.JFrame {
+public class PresentacionSpaceInvasionDani extends javax.swing.JFrame {
 
     /**
-     * Creates new form VistaSpaceInvasionDani
+     * Creates new form PresentacionSpaceInvasionDani
      */
-    public VistaSpaceInvasionDani() {
+    public PresentacionSpaceInvasionDani() {
         initComponents();
+        this.setSize(500,300);
+        //this.setUndecorated(true);
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -27,18 +31,26 @@ public class VistaSpaceInvasionDani extends javax.swing.JFrame {
     private void initComponents() {
 
         labelSpaceInvasionDani = new javax.swing.JLabel();
+        labelPorcentajeCarga = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cargando Space Invasion Dani");
 
-        labelSpaceInvasionDani.setFont(new java.awt.Font("Dialog", 0, 5)); // NOI18N
-        labelSpaceInvasionDani.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelSpaceInvasionDani.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_inicio/Space_Invasion_Dani.png"))); // NOI18N
+        labelSpaceInvasionDani.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/Space_Invasion_Dani.png"))); // NOI18N
         getContentPane().add(labelSpaceInvasionDani, java.awt.BorderLayout.CENTER);
+
+        labelPorcentajeCarga.setText("0%");
+        getContentPane().add(labelPorcentajeCarga, java.awt.BorderLayout.PAGE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel labelPorcentajeCarga;
     private javax.swing.JLabel labelSpaceInvasionDani;
     // End of variables declaration//GEN-END:variables
+
+    public void setPorcentajeCarga(String texto){
+        labelPorcentajeCarga.setText(texto);
+    }
 }
