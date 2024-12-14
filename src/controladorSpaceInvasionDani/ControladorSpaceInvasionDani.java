@@ -76,8 +76,7 @@ public class ControladorSpaceInvasionDani implements ActionListener {
                 principalSID.mensajeVerAyuda("Hablar con el desarrollador del juego.");
                 break;
             default:
-                System.out.print("Error");
-                System.out.println(e.getActionCommand());
+                System.out.print("Error" + e.getActionCommand());
                 break;
         }
     }

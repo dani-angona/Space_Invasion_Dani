@@ -43,6 +43,8 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
         jMenuItemAvanzado = new javax.swing.JMenuItem();
         jMenuAyuda = new javax.swing.JMenu();
         jMenuItemVerAyuda = new javax.swing.JMenuItem();
+        jMenuOpciones = new javax.swing.JMenu();
+        jMenuItemPartida = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Space Invasion Dani");
@@ -95,6 +97,13 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
 
         jMenuBarHerramientas.add(jMenuAyuda);
 
+        jMenuOpciones.setText("Opciones");
+
+        jMenuItemPartida.setText("Partida");
+        jMenuOpciones.add(jMenuItemPartida);
+
+        jMenuBarHerramientas.add(jMenuOpciones);
+
         setJMenuBar(jMenuBarHerramientas);
 
         pack();
@@ -108,9 +117,11 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBarHerramientas;
     private javax.swing.JMenuItem jMenuItemAvanzado;
     private javax.swing.JMenuItem jMenuItemIntermedio;
+    private javax.swing.JMenuItem jMenuItemPartida;
     private javax.swing.JMenuItem jMenuItemPrincipiante;
     private javax.swing.JMenuItem jMenuItemVerAyuda;
     private javax.swing.JMenu jMenuNivel;
+    private javax.swing.JMenu jMenuOpciones;
     private javax.swing.JPanel jPanelMenu;
     // End of variables declaration//GEN-END:variables
 
