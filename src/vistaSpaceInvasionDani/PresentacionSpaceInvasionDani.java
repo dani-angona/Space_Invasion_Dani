@@ -15,8 +15,7 @@ public class PresentacionSpaceInvasionDani extends javax.swing.JFrame {
      */
     public PresentacionSpaceInvasionDani() {
         initComponents();
-        this.setSize(500,300);
-        //this.setUndecorated(true);
+        this.setSize(470,400);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
     }
@@ -36,7 +35,9 @@ public class PresentacionSpaceInvasionDani extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cargando Space Invasion Dani");
 
+        jLabelSpaceInvasionDani.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabelSpaceInvasionDani.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/Space_Invasion_Dani.png"))); // NOI18N
+        jLabelSpaceInvasionDani.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         getContentPane().add(jLabelSpaceInvasionDani, java.awt.BorderLayout.CENTER);
 
         jLabelPorcentajeCarga.setText("0%");

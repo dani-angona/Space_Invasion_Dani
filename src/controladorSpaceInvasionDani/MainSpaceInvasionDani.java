@@ -6,6 +6,7 @@ package controladorSpaceInvasionDani;
 
 import vistaSpaceInvasionDani.PresentacionSpaceInvasionDani;
 import modeloSpaceInvasionDani.ModeloSpaceInvasionDani;
+import vistaSpaceInvasionDani.NivelSpaceInvasionDani;
 import vistaSpaceInvasionDani.PrincipalSpaceInvasionDani;
 
 /**
@@ -24,7 +25,8 @@ public class MainSpaceInvasionDani {
         ModeloSpaceInvasionDani modeloSID = new ModeloSpaceInvasionDani();
         PresentacionSpaceInvasionDani presentacionSID = new PresentacionSpaceInvasionDani();
         PrincipalSpaceInvasionDani principalSID = new PrincipalSpaceInvasionDani();
-        ControladorSpaceInvasionDani controladorSID = new ControladorSpaceInvasionDani(modeloSID, presentacionSID, principalSID);
+        NivelSpaceInvasionDani nivelSID = new NivelSpaceInvasionDani(principalSID, true);
+        ControladorSpaceInvasionDani controladorSID = new ControladorSpaceInvasionDani(modeloSID, presentacionSID, principalSID, nivelSID);
         
         controladorSID.mostrarPresentacionSpaceInvasionDani();
     }  

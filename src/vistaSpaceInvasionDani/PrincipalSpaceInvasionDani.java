@@ -19,6 +19,7 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
     public PrincipalSpaceInvasionDani() {
         System.out.println("LLamo a PrincipalSpaceInvasionDani");
         initComponents();
+        this.setSize(470,400);
         this.setLocationRelativeTo(null);
     }
 
@@ -111,15 +112,15 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
         jMenuItemVerAyuda.addActionListener(l);
     }
     
-    public void botonNuevaPartida(ActionListener l){
+    public void jDialogNuevaPartida(ActionListener l){
         jButtonNuevaPartida.addActionListener(l);
     }
     
-    public void botonNivel(ActionListener l){
+    public void jDialogNivel(ActionListener l){
         jButtonNivel.addActionListener(l);
     }
     
-    public void botonSalir(ActionListener l){
+    public void jDialogSalir(ActionListener l){
         jButtonSalir.addActionListener(l);
     }
     

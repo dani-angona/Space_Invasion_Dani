@@ -5,6 +5,7 @@
 package vistaSpaceInvasionDani;
 
 import java.awt.event.ActionListener;
+import javax.swing.JTextField;
 
 /**
  * Clase vista presentacion de mi programa Space Invasion Dani
@@ -130,12 +131,16 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
         jButtonPrincipiante.addActionListener(l);
     }
     
-    public void botonIntermdio(ActionListener l){
+    public void botonIntermedio(ActionListener l){
         jButtonIntermedio.addActionListener(l);
     }
     
     public void botonAvanzado(ActionListener l){
         jButtonAvanzado.addActionListener(l);
+    }
+    
+    public JTextField getNombreJugador(){
+        return jTextFieldNombreJugador;
     }
     
     public void guardarNivel(ActionListener l){

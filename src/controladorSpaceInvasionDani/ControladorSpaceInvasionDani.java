@@ -6,6 +6,13 @@ package controladorSpaceInvasionDani;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import vistaSpaceInvasionDani.PresentacionSpaceInvasionDani;
@@ -21,20 +28,28 @@ public class ControladorSpaceInvasionDani implements ActionListener {
     private ModeloSpaceInvasionDani modeloSID;
     private PresentacionSpaceInvasionDani presentacionSID;
     private PrincipalSpaceInvasionDani principalSID;
+    private NivelSpaceInvasionDani nivelSID;
+    private String nombreJugador;
+    private String nivel;
+    private final String archivoNivel = "src/Nivel.txt";
 
-    public ControladorSpaceInvasionDani(ModeloSpaceInvasionDani modeloSID, PresentacionSpaceInvasionDani presentacionSID, PrincipalSpaceInvasionDani principalSID) {
+    public ControladorSpaceInvasionDani(ModeloSpaceInvasionDani modeloSID, PresentacionSpaceInvasionDani presentacionSID, PrincipalSpaceInvasionDani principalSID, NivelSpaceInvasionDani nivelSID) {
         this.modeloSID = modeloSID;
         this.presentacionSID = presentacionSID;
         this.principalSID = principalSID;
+        this.nivelSID = nivelSID;
         
         escuchadores(this);
     }
     
     public void escuchadores(ActionListener listener){
         principalSID.menuItemVerAyuda(this);
-        principalSID.botonNuevaPartida(this);
-        principalSID.botonNivel(this);
-        principalSID.botonSalir(this);
+        principalSID.jDialogNuevaPartida(this);
+        principalSID.jDialogNivel(this);
+        principalSID.jDialogSalir(this);
+        nivelSID.botonPrincipiante(this);
+        nivelSID.botonIntermedio(this);
+        nivelSID.botonAvanzado(this);
     }
     
     public void mostrarPresentacionSpaceInvasionDani(){
@@ -44,6 +59,10 @@ public class ControladorSpaceInvasionDani implements ActionListener {
     
     public void mostrarPrincipalSpaceInvasionDani(){
         principalSID.setVisible(true);
+    }
+    
+    public void jDialogNivel(){
+        nivelSID.setVisible(true);
     }
     
     public void porcentajeCarga(){
@@ -60,10 +79,35 @@ public class ControladorSpaceInvasionDani implements ActionListener {
         mostrarPrincipalSpaceInvasionDani();
     }
     
-    public void botonNivel(){
-        NivelSpaceInvasionDani nivelSID = new NivelSpaceInvasionDani(principalSID, true);
-        nivelSID.setVisible(true);
+    /*public void guardarArchivoNivelTxt(){
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(archivoNivel))){
+            writer.write(nombreJugador + "\n");
+            writer.write(nivel + "\n");
+            System.out.println("Configuracion del nivel elegido guardado en: " + archivoNivel);
+        } catch (IOException ex) {
+            Logger.getLogger(ControladorSpaceInvasionDani.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+    
+    public void cargarArchivoNivelTxt(){
+        File archivo = new File(archivoNivel);
+        
+        if(archivo.exists()){
+            try(BufferedReader br = new BufferedReader(new FileReader(archivo))){
+                nombreJugador = reader.readLine();
+                nivel = reader.readLine();
+                
+                if(nombreJugador != null && nivel != null){
+                    System.out.println("Archivo cargado: " + nombreJugador + " | " + nivel);
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(ControladorSpaceInvasionDani.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            System.out.println("Archivo no encontrado");
+        }
+    }*/
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -77,10 +121,11 @@ public class ControladorSpaceInvasionDani implements ActionListener {
                 break;
             case "NIVEL":
                 System.out.println("Has elegido Nivel");
-                botonNivel();
+                jDialogNivel();
                 break;
             case "SALIR":
                 System.out.println("Has elegido Salir");
+                System.exit(0);
                 break;
             case "PRINCIPIANTE":
                 System.out.println("Has puesto la dificultad en Principiante");
