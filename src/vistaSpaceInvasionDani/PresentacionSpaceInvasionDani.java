@@ -11,6 +11,7 @@ package vistaSpaceInvasionDani;
 public class PresentacionSpaceInvasionDani extends javax.swing.JFrame {
 
     /**
+     * Constructor de la clase PresentacionSpaceInvasionDani
      * Creates new form PresentacionSpaceInvasionDani
      */
     public PresentacionSpaceInvasionDani() {
@@ -51,6 +52,10 @@ public class PresentacionSpaceInvasionDani extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelSpaceInvasionDani;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Setter del porcentaje de carga del label
+     * @param texto String mensaje del label
+     */
     public void setPorcentajeCarga(String texto){
         jLabelPorcentajeCarga.setText(texto);
     }

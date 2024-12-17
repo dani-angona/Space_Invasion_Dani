@@ -29,10 +29,17 @@ public class ControladorSpaceInvasionDani implements ActionListener {
     private PresentacionSpaceInvasionDani presentacionSID;
     private PrincipalSpaceInvasionDani principalSID;
     private NivelSpaceInvasionDani nivelSID;
-    private String nombreJugador;
+    /*private String nombreJugador;
     private String nivel;
-    private final String archivoNivel = "src/Nivel.txt";
+    private final String archivoNivel = "src/Nivel.txt";*/
 
+    /**
+     * Constructor de la clase ControladorSpaceInvasionDani
+     * @param modeloSID Instancia de la clase ModeloSpaceInvasionDani
+     * @param presentacionSID Instancia de la clase PresentacionSpaceInvasionDani
+     * @param principalSID Instancia de la clase PrincipalSpaceInvasionDani
+     * @param nivelSID Instancia de la clase NivelSpaceInvasionDani
+     */
     public ControladorSpaceInvasionDani(ModeloSpaceInvasionDani modeloSID, PresentacionSpaceInvasionDani presentacionSID, PrincipalSpaceInvasionDani principalSID, NivelSpaceInvasionDani nivelSID) {
         this.modeloSID = modeloSID;
         this.presentacionSID = presentacionSID;
@@ -42,6 +49,10 @@ public class ControladorSpaceInvasionDani implements ActionListener {
         escuchadores(this);
     }
     
+    /**
+     * Método de los escuchadores
+     * @param listener ActionListener
+     */
     public void escuchadores(ActionListener listener){
         principalSID.menuItemVerAyuda(this);
         principalSID.jDialogNuevaPartida(this);
@@ -52,19 +63,31 @@ public class ControladorSpaceInvasionDani implements ActionListener {
         nivelSID.botonAvanzado(this);
     }
     
+    /**
+     * Método que muestra la ventana PresentacionSpaceInvasionDani
+     */
     public void mostrarPresentacionSpaceInvasionDani(){
         presentacionSID.setVisible(true);
         porcentajeCarga();
     }
     
+    /**
+     * Método que muestra la ventana PrincipalSpaceInvasionDani
+     */
     public void mostrarPrincipalSpaceInvasionDani(){
         principalSID.setVisible(true);
     }
     
+    /**
+     * Método que muestra el JDialog de Nivel
+     */
     public void jDialogNivel(){
         nivelSID.setVisible(true);
     }
     
+    /**
+     * Método que simula la carga de la ventana PresentacionSpaceInvasionDani
+     */
     public void porcentajeCarga(){
         try{
             for(int i = 0; i <= 100; i += 25){
@@ -80,16 +103,16 @@ public class ControladorSpaceInvasionDani implements ActionListener {
     }
     
     /*public void guardarArchivoNivelTxt(){
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(archivoNivel))){
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("archivoNivel"))){
             writer.write(nombreJugador + "\n");
             writer.write(nivel + "\n");
-            System.out.println("Configuracion del nivel elegido guardado en: " + archivoNivel);
+            //System.out.println("Configuracion del nivel elegido guardado en: " + archivoNivel);
         } catch (IOException ex) {
             Logger.getLogger(ControladorSpaceInvasionDani.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+    }*/
     
-    public void cargarArchivoNivelTxt(){
+    /*public void cargarArchivoNivelTxt(){
         File archivo = new File(archivoNivel);
         
         if(archivo.exists()){
@@ -109,6 +132,10 @@ public class ControladorSpaceInvasionDani implements ActionListener {
         }
     }*/
 
+    /**
+     * Método actionPerformed donde se añaden funciones a los escuchadores
+     * @param e ActionEvent
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch(e.getActionCommand()){

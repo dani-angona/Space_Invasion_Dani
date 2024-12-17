@@ -5,15 +5,15 @@
 package vistaSpaceInvasionDani;
 
 import java.awt.event.ActionListener;
-import javax.swing.JTextField;
 
 /**
- * Clase vista presentacion de mi programa Space Invasion Dani
+ * Clase JDialog Nivel de mi programa Space Invasion Dani
  * @author Dani Angona
  */
 public class NivelSpaceInvasionDani extends javax.swing.JDialog {
 
     /**
+     * Constructor de la clase NivelSpaceInvasionDani
      * Creates new form JDialogSpaceInvasionDani
      */
     public NivelSpaceInvasionDani(java.awt.Frame parent, boolean modal) {
@@ -127,22 +127,42 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
     private javax.swing.JTextField jTextFieldNombreJugador;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Método que añade un ActionListener al Button Principiante
+     * @param l ActionListener
+     */
     public void botonPrincipiante(ActionListener l){
         jButtonPrincipiante.addActionListener(l);
     }
     
+    /**
+     * Método que añade un ActionListener al Button Intermedio
+     * @param l ActionListener
+     */
     public void botonIntermedio(ActionListener l){
         jButtonIntermedio.addActionListener(l);
     }
     
+    /**
+     * Método que añade un ActionListener al Button Avanzado
+     * @param l ActionListener
+     */
     public void botonAvanzado(ActionListener l){
         jButtonAvanzado.addActionListener(l);
     }
     
-    public JTextField getNombreJugador(){
-        return jTextFieldNombreJugador;
+    /**
+     * Getter del nombre del jugador del JTextField
+     * @return texto del jTextFieldNombreJugador
+     */
+    public String getNombreJugador(){
+        return jTextFieldNombreJugador.getText();
     }
     
+    /**
+     * Método que añade un ActionListener al Button Guardar
+     * @param l ActionListener
+     */
     public void guardarNivel(ActionListener l){
         jButtonGuardarNivel.addActionListener(l);
     }

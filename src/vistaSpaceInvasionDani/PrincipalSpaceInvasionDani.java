@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
 
     /**
+     * Constructor de la clase PrincipalSpaceInvasionDani
      * Creates new form PrincipalSpaceInvasionDani
      */
     public PrincipalSpaceInvasionDani() {
@@ -108,22 +109,42 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelMenu;
     // End of variables declaration//GEN-END:variables
     
+    /**
+     * Método que añade un ActionListener al MenuItem VerAyuda
+     * @param l ActionListener
+     */
     public void menuItemVerAyuda(ActionListener l){
         jMenuItemVerAyuda.addActionListener(l);
     }
     
+    /**
+     * Método que añade un ActionListener al JButton NuevaPartida
+     * @param l ActionListener
+     */
     public void jDialogNuevaPartida(ActionListener l){
         jButtonNuevaPartida.addActionListener(l);
     }
     
+    /**
+     * Método que añade un ActionListener al Button Nivel
+     * @param l ActionListener
+     */
     public void jDialogNivel(ActionListener l){
         jButtonNivel.addActionListener(l);
     }
     
+    /**
+     * Método que añade un ActionListener al Button Salir
+     * @param l ActionListener
+     */
     public void jDialogSalir(ActionListener l){
         jButtonSalir.addActionListener(l);
     }
     
+    /**
+     * Método que muestra un cuadro de diálogo de advertencia con un mensaje
+     * @param mensajeSalir String mensaje de salida del cuadro de diálogo
+     */
     public void mensajeVerAyuda(String mensajeSalir){
         JOptionPane.showMessageDialog(null, mensajeSalir, null, JOptionPane.WARNING_MESSAGE);
     }
