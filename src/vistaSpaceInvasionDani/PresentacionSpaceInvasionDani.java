@@ -30,27 +30,27 @@ public class PresentacionSpaceInvasionDani extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelSpaceInvasionDani = new javax.swing.JLabel();
-        labelPorcentajeCarga = new javax.swing.JLabel();
+        jLabelSpaceInvasionDani = new javax.swing.JLabel();
+        jLabelPorcentajeCarga = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cargando Space Invasion Dani");
 
-        labelSpaceInvasionDani.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/Space_Invasion_Dani.png"))); // NOI18N
-        getContentPane().add(labelSpaceInvasionDani, java.awt.BorderLayout.CENTER);
+        jLabelSpaceInvasionDani.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/Space_Invasion_Dani.png"))); // NOI18N
+        getContentPane().add(jLabelSpaceInvasionDani, java.awt.BorderLayout.CENTER);
 
-        labelPorcentajeCarga.setText("0%");
-        getContentPane().add(labelPorcentajeCarga, java.awt.BorderLayout.PAGE_END);
+        jLabelPorcentajeCarga.setText("0%");
+        getContentPane().add(jLabelPorcentajeCarga, java.awt.BorderLayout.PAGE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel labelPorcentajeCarga;
-    private javax.swing.JLabel labelSpaceInvasionDani;
+    private javax.swing.JLabel jLabelPorcentajeCarga;
+    private javax.swing.JLabel jLabelSpaceInvasionDani;
     // End of variables declaration//GEN-END:variables
 
     public void setPorcentajeCarga(String texto){
-        labelPorcentajeCarga.setText(texto);
+        jLabelPorcentajeCarga.setText(texto);
     }
 }

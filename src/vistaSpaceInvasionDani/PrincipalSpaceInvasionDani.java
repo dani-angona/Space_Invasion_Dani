@@ -34,13 +34,9 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
 
         jPanelMenu = new javax.swing.JPanel();
         jButtonNuevaPartida = new javax.swing.JButton();
+        jButtonNivel = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
-        jButtonEstadisticas = new javax.swing.JButton();
         jMenuBarHerramientas = new javax.swing.JMenuBar();
-        jMenuNivel = new javax.swing.JMenu();
-        jMenuItemPrincipiante = new javax.swing.JMenuItem();
-        jMenuItemIntermedio = new javax.swing.JMenuItem();
-        jMenuItemAvanzado = new javax.swing.JMenuItem();
         jMenuAyuda = new javax.swing.JMenu();
         jMenuItemVerAyuda = new javax.swing.JMenuItem();
         jMenuOpciones = new javax.swing.JMenu();
@@ -51,6 +47,7 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
 
         jPanelMenu.setLayout(new java.awt.GridBagLayout());
 
+        jButtonNuevaPartida.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jButtonNuevaPartida.setText("NUEVA PARTIDA");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -59,36 +56,25 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
         jPanelMenu.add(jButtonNuevaPartida, gridBagConstraints);
 
-        jButtonSalir.setText("SALIR");
+        jButtonNivel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButtonNivel.setText("NIVEL");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
-        jPanelMenu.add(jButtonSalir, gridBagConstraints);
+        jPanelMenu.add(jButtonNivel, gridBagConstraints);
 
-        jButtonEstadisticas.setText("ESTADISTICAS");
+        jButtonSalir.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButtonSalir.setText("SALIR");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
-        jPanelMenu.add(jButtonEstadisticas, gridBagConstraints);
+        jPanelMenu.add(jButtonSalir, gridBagConstraints);
 
         getContentPane().add(jPanelMenu, java.awt.BorderLayout.CENTER);
-
-        jMenuNivel.setText("Nivel");
-
-        jMenuItemPrincipiante.setText("Principiante");
-        jMenuNivel.add(jMenuItemPrincipiante);
-
-        jMenuItemIntermedio.setText("Intermedio");
-        jMenuNivel.add(jMenuItemIntermedio);
-
-        jMenuItemAvanzado.setText("Avanzado");
-        jMenuNivel.add(jMenuItemAvanzado);
-
-        jMenuBarHerramientas.add(jMenuNivel);
 
         jMenuAyuda.setText("Ayuda");
 
@@ -110,35 +96,31 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonEstadisticas;
+    private javax.swing.JButton jButtonNivel;
     private javax.swing.JButton jButtonNuevaPartida;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JMenu jMenuAyuda;
     private javax.swing.JMenuBar jMenuBarHerramientas;
-    private javax.swing.JMenuItem jMenuItemAvanzado;
-    private javax.swing.JMenuItem jMenuItemIntermedio;
     private javax.swing.JMenuItem jMenuItemPartida;
-    private javax.swing.JMenuItem jMenuItemPrincipiante;
     private javax.swing.JMenuItem jMenuItemVerAyuda;
-    private javax.swing.JMenu jMenuNivel;
     private javax.swing.JMenu jMenuOpciones;
     private javax.swing.JPanel jPanelMenu;
     // End of variables declaration//GEN-END:variables
-
-    public void MenuItemPrincipiante(ActionListener l){
-        jMenuItemPrincipiante.addActionListener(l);
-    }
     
-    public void MenuItemIntermedio(ActionListener l){
-        jMenuItemIntermedio.addActionListener(l);
-    }
-    
-    public void MenuItemAvanzado(ActionListener l){
-        jMenuItemAvanzado.addActionListener(l);
-    }
-    
-    public void MenuItemVerAyuda(ActionListener l){
+    public void menuItemVerAyuda(ActionListener l){
         jMenuItemVerAyuda.addActionListener(l);
+    }
+    
+    public void botonNuevaPartida(ActionListener l){
+        jButtonNuevaPartida.addActionListener(l);
+    }
+    
+    public void botonNivel(ActionListener l){
+        jButtonNivel.addActionListener(l);
+    }
+    
+    public void botonSalir(ActionListener l){
+        jButtonSalir.addActionListener(l);
     }
     
     public void mensajeVerAyuda(String mensajeSalir){

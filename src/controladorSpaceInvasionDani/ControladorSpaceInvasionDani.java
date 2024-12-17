@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import vistaSpaceInvasionDani.PresentacionSpaceInvasionDani;
 import modeloSpaceInvasionDani.ModeloSpaceInvasionDani;
+import vistaSpaceInvasionDani.NivelSpaceInvasionDani;
 import vistaSpaceInvasionDani.PrincipalSpaceInvasionDani;
 
 /**
@@ -30,10 +31,10 @@ public class ControladorSpaceInvasionDani implements ActionListener {
     }
     
     public void escuchadores(ActionListener listener){
-        principalSID.MenuItemPrincipiante(this);
-        principalSID.MenuItemIntermedio(this);
-        principalSID.MenuItemAvanzado(this);
-        principalSID.MenuItemVerAyuda(this);
+        principalSID.menuItemVerAyuda(this);
+        principalSID.botonNuevaPartida(this);
+        principalSID.botonNivel(this);
+        principalSID.botonSalir(this);
     }
     
     public void mostrarPresentacionSpaceInvasionDani(){
@@ -58,22 +59,37 @@ public class ControladorSpaceInvasionDani implements ActionListener {
         presentacionSID.dispose();
         mostrarPrincipalSpaceInvasionDani();
     }
+    
+    public void botonNivel(){
+        NivelSpaceInvasionDani nivelSID = new NivelSpaceInvasionDani(principalSID, true);
+        nivelSID.setVisible(true);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         switch(e.getActionCommand()){
-            case "Principiante":
-                System.out.println("Has puesto la dificultad en Principiante");
-                break;
-            case "Intermedio":
-                System.out.println("Has puesto la dificultad en Intermedio");
-                break;
-            case "Avanzado":
-                System.out.println("Has puesto la dificultad en Avanzado");
-                break;
             case "Ver la ayuda":
                 System.out.println("Has elegido Ver la ayuda");
                 principalSID.mensajeVerAyuda("Hablar con el desarrollador del juego.");
+                break;
+            case "NUEVA PARTIDA":
+                System.out.println("Has elegido Nueva Partida");
+                break;
+            case "NIVEL":
+                System.out.println("Has elegido Nivel");
+                botonNivel();
+                break;
+            case "SALIR":
+                System.out.println("Has elegido Salir");
+                break;
+            case "PRINCIPIANTE":
+                System.out.println("Has puesto la dificultad en Principiante");
+                break;
+            case "INTERMEDIO":
+                System.out.println("Has puesto la dificultad en Intermedio");
+                break;
+            case "AVANZADO":
+                System.out.println("Has puesto la dificultad en Avanzado");
                 break;
             default:
                 System.out.print("Error" + e.getActionCommand());
