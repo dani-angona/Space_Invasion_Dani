@@ -5,13 +5,16 @@
 package vistaSpaceInvasionDani;
 
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  * Clase JDialog Nivel de mi programa Space Invasion Dani
  * @author Dani Angona
  */
 public class NivelSpaceInvasionDani extends javax.swing.JDialog {
-
+    private String nombreJugador;
+    private String nivelSeleccionado;
+    
     /**
      * Constructor de la clase NivelSpaceInvasionDani
      * Creates new form JDialogSpaceInvasionDani
@@ -32,6 +35,7 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        GrupoBotonesNivel = new javax.swing.ButtonGroup();
         jPanelLabel = new javax.swing.JPanel();
         jLabelSeleccionaNivelJuego = new javax.swing.JLabel();
         jPanelNiveles = new javax.swing.JPanel();
@@ -54,11 +58,13 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
         jPanelNiveles.setLayout(new java.awt.GridBagLayout());
 
         jButtonPrincipiante.setText("PRINCIPIANTE");
+        GrupoBotonesNivel.add(jButtonPrincipiante);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
         jPanelNiveles.add(jButtonPrincipiante, gridBagConstraints);
 
         jButtonIntermedio.setText("INTERMEDIO");
+        GrupoBotonesNivel.add(jButtonIntermedio);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -66,6 +72,7 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
         jPanelNiveles.add(jButtonIntermedio, gridBagConstraints);
 
         jButtonAvanzado.setText("AVANZADO");
+        GrupoBotonesNivel.add(jButtonAvanzado);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -115,6 +122,7 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup GrupoBotonesNivel;
     private javax.swing.JButton jButtonAvanzado;
     private javax.swing.JButton jButtonGuardarNivel;
     private javax.swing.JButton jButtonIntermedio;
@@ -165,5 +173,39 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
      */
     public void guardarNivel(ActionListener l){
         jButtonGuardarNivel.addActionListener(l);
+    }
+    
+    /**
+     * Getter para seleccionar el nivel de dificultad
+     * @return String texto del boton seleccionado
+     */
+    public String getNivelSeleccionado(){
+        if(jButtonPrincipiante.isSelected()){
+            return "Principiante";
+        }
+        else if(jButtonIntermedio.isSelected()){
+            return "Intermedio";
+        }
+        else if(jButtonAvanzado.isSelected()){
+            return "Avanzado";
+        }
+        
+        return "";
+    }
+    
+    /**
+     * Método que muestra un cuadro de diálogo con el mensaje de error
+     * @param mensaje String mensaje de error al guardar el archivo
+     */
+    public void errorNivelSeleccionado(String mensaje){
+        JOptionPane.showMessageDialog(this, mensaje, "Error al guardar el archivo", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    /**
+     * Método que muestra un cuadro de diálogo con el mensaje de acierto
+     * @param mensaje String mensaje de archivo guardado correctamente
+     */
+    public void aciertoNivelSeleccionado(String mensaje){
+        JOptionPane.showMessageDialog(this, mensaje, "Archivo guardado correctamente", JOptionPane.INFORMATION_MESSAGE);
     }
 }

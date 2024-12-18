@@ -6,13 +6,6 @@ package controladorSpaceInvasionDani;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import vistaSpaceInvasionDani.PresentacionSpaceInvasionDani;
@@ -29,9 +22,6 @@ public class ControladorSpaceInvasionDani implements ActionListener {
     private PresentacionSpaceInvasionDani presentacionSID;
     private PrincipalSpaceInvasionDani principalSID;
     private NivelSpaceInvasionDani nivelSID;
-    /*private String nombreJugador;
-    private String nivel;
-    private final String archivoNivel = "src/Nivel.txt";*/
 
     /**
      * Constructor de la clase ControladorSpaceInvasionDani
@@ -61,6 +51,7 @@ public class ControladorSpaceInvasionDani implements ActionListener {
         nivelSID.botonPrincipiante(this);
         nivelSID.botonIntermedio(this);
         nivelSID.botonAvanzado(this);
+        nivelSID.guardarNivel(this);
     }
     
     /**
@@ -92,7 +83,7 @@ public class ControladorSpaceInvasionDani implements ActionListener {
         try{
             for(int i = 0; i <= 100; i += 25){
                 presentacionSID.setPorcentajeCarga(i + "%");
-                Thread.sleep(1500);
+                Thread.sleep(1000);
             }
         } catch (InterruptedException ex) {
             Logger.getLogger(ControladorSpaceInvasionDani.class.getName()).log(Level.SEVERE, null, ex);
@@ -102,36 +93,6 @@ public class ControladorSpaceInvasionDani implements ActionListener {
         mostrarPrincipalSpaceInvasionDani();
     }
     
-    /*public void guardarArchivoNivelTxt(){
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter("archivoNivel"))){
-            writer.write(nombreJugador + "\n");
-            writer.write(nivel + "\n");
-            //System.out.println("Configuracion del nivel elegido guardado en: " + archivoNivel);
-        } catch (IOException ex) {
-            Logger.getLogger(ControladorSpaceInvasionDani.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }*/
-    
-    /*public void cargarArchivoNivelTxt(){
-        File archivo = new File(archivoNivel);
-        
-        if(archivo.exists()){
-            try(BufferedReader br = new BufferedReader(new FileReader(archivo))){
-                nombreJugador = reader.readLine();
-                nivel = reader.readLine();
-                
-                if(nombreJugador != null && nivel != null){
-                    System.out.println("Archivo cargado: " + nombreJugador + " | " + nivel);
-                }
-            } catch (IOException ex) {
-                Logger.getLogger(ControladorSpaceInvasionDani.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        else{
-            System.out.println("Archivo no encontrado");
-        }
-    }*/
-
     /**
      * Método actionPerformed donde se añaden funciones a los escuchadores
      * @param e ActionEvent
@@ -162,6 +123,21 @@ public class ControladorSpaceInvasionDani implements ActionListener {
                 break;
             case "AVANZADO":
                 System.out.println("Has puesto la dificultad en Avanzado");
+                break;
+            case "GUARDAR":
+                System.out.println("Has elegido Guardar");
+                
+                String nombreJugador = nivelSID.getNombreJugador();
+                System.out.println("Contenido de jTextFieldNombreJugador: " + nivelSID.getNombreJugador());
+                String nivelSeleccionado = nivelSID.getNivelSeleccionado();
+                
+                if(nombreJugador.isEmpty() || nivelSeleccionado.isEmpty()){
+                    nivelSID.errorNivelSeleccionado("Por favor, ingrese un nombre de jugador y seleccione un nivel");
+                }
+                else{
+                    modeloSID.guardarNivelEnArchivoTxt(nombreJugador, nivelSeleccionado);
+                    nivelSID.aciertoNivelSeleccionado("Nivel guardado correctamente");
+                }
                 break;
             default:
                 System.out.print("Error" + e.getActionCommand());
