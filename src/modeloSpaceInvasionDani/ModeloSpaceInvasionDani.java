@@ -5,6 +5,7 @@
 package modeloSpaceInvasionDani;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -17,16 +18,22 @@ import java.util.logging.Logger;
 public class ModeloSpaceInvasionDani {
     
     /**
-     * Método que guarda el nombre del jugador y el nivel en el archivo Nivel.txt
+     * Método que guarda el nombre del jugador y el nivel en el archivo Nivel.txt dentro de la carpeta juego
      * @param nombreJugador String Nombre del jugador
      * @param nivelSeleccionado String Nivel selecccionado por el jugador
      */
     public void guardarNivelEnArchivoTxt(String nombreJugador, String nivelSeleccionado){
-        String ruta = "src/Nivel.txt";
+        String rutaCarpeta = "juego";
+        String rutaArchivo = rutaCarpeta + "/Nivel.txt";
+        
+        File carpeta = new File(rutaCarpeta);
+        if(!carpeta.exists()){
+            carpeta.mkdir();
+        }
         
         try{
-            BufferedWriter bf = new BufferedWriter(new FileWriter(ruta, true));
-            bf.write(nombreJugador + " ha escogido " + nivelSeleccionado);
+            BufferedWriter bf = new BufferedWriter(new FileWriter(rutaArchivo, true));
+            bf.write("El jugador " + nombreJugador + " ha escogido " + nivelSeleccionado);
             bf.newLine();
             bf.close();
         } catch (IOException ex) {

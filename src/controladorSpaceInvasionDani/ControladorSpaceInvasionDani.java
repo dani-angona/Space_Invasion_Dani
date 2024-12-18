@@ -128,7 +128,6 @@ public class ControladorSpaceInvasionDani implements ActionListener {
                 System.out.println("Has elegido Guardar");
                 
                 String nombreJugador = nivelSID.getNombreJugador();
-                System.out.println("Contenido de jTextFieldNombreJugador: " + nivelSID.getNombreJugador());
                 String nivelSeleccionado = nivelSID.getNivelSeleccionado();
                 
                 if(nombreJugador.isEmpty() || nivelSeleccionado.isEmpty()){

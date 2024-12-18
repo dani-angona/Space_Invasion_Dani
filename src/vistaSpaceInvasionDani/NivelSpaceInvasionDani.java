@@ -22,6 +22,7 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
     public NivelSpaceInvasionDani(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
     }
 
@@ -39,15 +40,16 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
         jPanelLabel = new javax.swing.JPanel();
         jLabelSeleccionaNivelJuego = new javax.swing.JLabel();
         jPanelNiveles = new javax.swing.JPanel();
-        jButtonPrincipiante = new javax.swing.JButton();
-        jButtonIntermedio = new javax.swing.JButton();
-        jButtonAvanzado = new javax.swing.JButton();
+        jRadioButtonPrincipiante = new javax.swing.JRadioButton();
+        jRadioButtonIntermedio = new javax.swing.JRadioButton();
+        jRadioButtonAvanzado = new javax.swing.JRadioButton();
         jPanelGuardarNivel = new javax.swing.JPanel();
         jLabelNombreJugador = new javax.swing.JLabel();
         jTextFieldNombreJugador = new javax.swing.JTextField();
         jButtonGuardarNivel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Space Invasion Dani: Nivel");
 
         jLabelSeleccionaNivelJuego.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabelSeleccionaNivelJuego.setText("SELECCIONA EL NIVEL DEL JUEGO");
@@ -57,27 +59,27 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
 
         jPanelNiveles.setLayout(new java.awt.GridBagLayout());
 
-        jButtonPrincipiante.setText("PRINCIPIANTE");
-        GrupoBotonesNivel.add(jButtonPrincipiante);
+        GrupoBotonesNivel.add(jRadioButtonPrincipiante);
+        jRadioButtonPrincipiante.setText("PRINCIPIANTE");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
-        jPanelNiveles.add(jButtonPrincipiante, gridBagConstraints);
+        jPanelNiveles.add(jRadioButtonPrincipiante, gridBagConstraints);
 
-        jButtonIntermedio.setText("INTERMEDIO");
-        GrupoBotonesNivel.add(jButtonIntermedio);
+        GrupoBotonesNivel.add(jRadioButtonIntermedio);
+        jRadioButtonIntermedio.setText("INTERMEDIO");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
-        jPanelNiveles.add(jButtonIntermedio, gridBagConstraints);
+        jPanelNiveles.add(jRadioButtonIntermedio, gridBagConstraints);
 
-        jButtonAvanzado.setText("AVANZADO");
-        GrupoBotonesNivel.add(jButtonAvanzado);
+        GrupoBotonesNivel.add(jRadioButtonAvanzado);
+        jRadioButtonAvanzado.setText("AVANZADO");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 10, 0);
-        jPanelNiveles.add(jButtonAvanzado, gridBagConstraints);
+        jPanelNiveles.add(jRadioButtonAvanzado, gridBagConstraints);
 
         getContentPane().add(jPanelNiveles, java.awt.BorderLayout.CENTER);
 
@@ -96,7 +98,7 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
             .addGroup(jPanelGuardarNivelLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabelNombreJugador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(jTextFieldNombreJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
             .addGroup(jPanelGuardarNivelLayout.createSequentialGroup()
@@ -123,15 +125,15 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup GrupoBotonesNivel;
-    private javax.swing.JButton jButtonAvanzado;
     private javax.swing.JButton jButtonGuardarNivel;
-    private javax.swing.JButton jButtonIntermedio;
-    private javax.swing.JButton jButtonPrincipiante;
     private javax.swing.JLabel jLabelNombreJugador;
     private javax.swing.JLabel jLabelSeleccionaNivelJuego;
     private javax.swing.JPanel jPanelGuardarNivel;
     private javax.swing.JPanel jPanelLabel;
     private javax.swing.JPanel jPanelNiveles;
+    private javax.swing.JRadioButton jRadioButtonAvanzado;
+    private javax.swing.JRadioButton jRadioButtonIntermedio;
+    private javax.swing.JRadioButton jRadioButtonPrincipiante;
     private javax.swing.JTextField jTextFieldNombreJugador;
     // End of variables declaration//GEN-END:variables
 
@@ -140,7 +142,7 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
      * @param l ActionListener
      */
     public void botonPrincipiante(ActionListener l){
-        jButtonPrincipiante.addActionListener(l);
+        jRadioButtonPrincipiante.addActionListener(l);
     }
     
     /**
@@ -148,7 +150,7 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
      * @param l ActionListener
      */
     public void botonIntermedio(ActionListener l){
-        jButtonIntermedio.addActionListener(l);
+        jRadioButtonIntermedio.addActionListener(l);
     }
     
     /**
@@ -156,7 +158,7 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
      * @param l ActionListener
      */
     public void botonAvanzado(ActionListener l){
-        jButtonAvanzado.addActionListener(l);
+        jRadioButtonAvanzado.addActionListener(l);
     }
     
     /**
@@ -180,13 +182,13 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
      * @return String texto del boton seleccionado
      */
     public String getNivelSeleccionado(){
-        if(jButtonPrincipiante.isSelected()){
+        if(jRadioButtonPrincipiante.isSelected()){
             return "Principiante";
         }
-        else if(jButtonIntermedio.isSelected()){
+        else if(jRadioButtonIntermedio.isSelected()){
             return "Intermedio";
         }
-        else if(jButtonAvanzado.isSelected()){
+        else if(jRadioButtonAvanzado.isSelected()){
             return "Avanzado";
         }
         
@@ -198,7 +200,7 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
      * @param mensaje String mensaje de error al guardar el archivo
      */
     public void errorNivelSeleccionado(String mensaje){
-        JOptionPane.showMessageDialog(this, mensaje, "Error al guardar el archivo", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, mensaje, null, JOptionPane.ERROR_MESSAGE);
     }
     
     /**
@@ -206,6 +208,6 @@ public class NivelSpaceInvasionDani extends javax.swing.JDialog {
      * @param mensaje String mensaje de archivo guardado correctamente
      */
     public void aciertoNivelSeleccionado(String mensaje){
-        JOptionPane.showMessageDialog(this, mensaje, "Archivo guardado correctamente", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, mensaje, null, JOptionPane.INFORMATION_MESSAGE);
     }
 }

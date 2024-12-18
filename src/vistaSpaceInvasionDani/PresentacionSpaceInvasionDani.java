@@ -4,6 +4,9 @@
  */
 package vistaSpaceInvasionDani;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  * Clase vista presentacion de mi programa Space Invasion Dani
  * @author Dani Angona
@@ -19,6 +22,10 @@ public class PresentacionSpaceInvasionDani extends javax.swing.JFrame {
         this.setSize(470,400);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        
+        ImageIcon icono = new ImageIcon(getClass().getResource("/multimedia/Logo_Alien.png"));
+        Image imagen = icono.getImage();
+        this.setIconImage(imagen);
     }
 
     /**
@@ -34,7 +41,7 @@ public class PresentacionSpaceInvasionDani extends javax.swing.JFrame {
         jLabelPorcentajeCarga = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cargando Space Invasion Dani");
+        setTitle("Space Invasion Dani");
 
         jLabelSpaceInvasionDani.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabelSpaceInvasionDani.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/Space_Invasion_Dani.png"))); // NOI18N

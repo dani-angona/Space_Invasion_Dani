@@ -4,7 +4,9 @@
  */
 package vistaSpaceInvasionDani;
 
+import java.awt.Image;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,6 +24,10 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
         initComponents();
         this.setSize(470,400);
         this.setLocationRelativeTo(null);
+        
+        ImageIcon icono = new ImageIcon(getClass().getResource("/multimedia/Logo_Alien.png"));
+        Image imagen = icono.getImage();
+        this.setIconImage(imagen);
     }
 
     /**
@@ -42,10 +48,9 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
         jMenuAyuda = new javax.swing.JMenu();
         jMenuItemVerAyuda = new javax.swing.JMenuItem();
         jMenuOpciones = new javax.swing.JMenu();
-        jMenuItemPartida = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Space Invasion Dani");
+        setTitle("Space Invasion Dani: Menú");
 
         jPanelMenu.setLayout(new java.awt.GridBagLayout());
 
@@ -86,10 +91,6 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
         jMenuBarHerramientas.add(jMenuAyuda);
 
         jMenuOpciones.setText("Opciones");
-
-        jMenuItemPartida.setText("Partida");
-        jMenuOpciones.add(jMenuItemPartida);
-
         jMenuBarHerramientas.add(jMenuOpciones);
 
         setJMenuBar(jMenuBarHerramientas);
@@ -103,7 +104,6 @@ public class PrincipalSpaceInvasionDani extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JMenu jMenuAyuda;
     private javax.swing.JMenuBar jMenuBarHerramientas;
-    private javax.swing.JMenuItem jMenuItemPartida;
     private javax.swing.JMenuItem jMenuItemVerAyuda;
     private javax.swing.JMenu jMenuOpciones;
     private javax.swing.JPanel jPanelMenu;
